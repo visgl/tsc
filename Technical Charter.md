@@ -12,7 +12,7 @@ other technical positions) and other participants in the Project (collectively,
 
 1.  Mission and Scope of the Project
 
-    1.  The mission of the Project is to provide a comprehensive, open-source solution for GPU-powered visualizations of large-scale datasets, accelerating software development and research in urban mobility, health, communication and other demains.
+    1.  The mission of the Project is to provide a comprehensive, open-source solution for GPU-powered visualizations of large-scale datasets, in particular geospatial data visualizations, accelerating the development and research in urban computing and a surrounding ecosystem.
 
     2.  The scope of the Project includes collaborative development under the
         Project License (as defined herein) supporting the mission, including
