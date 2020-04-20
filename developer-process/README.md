@@ -20,7 +20,7 @@ Non-trivial new features should typically be proposed with an RFC (Request for C
 
 A small, non-disruptive feature may be implemented without an RFC. The tracking issue should instead describe the background and the proposed change.
 
-All proposals will be reviewed and approved by the team before implementation. User-facing API changes should be audited following the project's API Guidelines, e.g. [deck.gl API Guidelines](https://www.github.com/visgl/deck.gl/dev-docs/deckgl-api-guidelines.md). 
+All proposals will be reviewed and approved by the team before implementation. User-facing API changes should be audited following the project's API Guidelines, e.g. [deck.gl API Guidelines](https://www.github.com/visgl/deck.gl/tree/master/dev-docs/deckgl-api-guidelines.md). 
 Breaking changes are scheduled for appropriate releases according to the [Deprecation Guidelines](./deprecation-guidelines.md).
 
 
@@ -30,7 +30,7 @@ Follow [Code Guidelines](./code-guidelines.md) when making changes to the source
 
 New code must be covered by tests. We have created a suite of tools that enable unit tests for JavaScript and GLSL shaders, and integration tests for WebGL rendering and user interaction. See [Test Guidelines](./test-guidelines.md).
 
-For features that concerns visuals (DOM, CSS and WebGL), additional testing for non-Chrome browsers may be required, see [supported platforms](./platform-support.md).
+For features that concerns visuals (DOM, CSS and WebGL), additional testing for non-Chrome browsers may be required, see [supported platforms](./target-platforms.md).
 
 Documentation should be updated to reflect the changes made to user-facing behavior and APIs. This includes the API documentation (e.g. `/docs/api-reference`) for the modified component, tutorials (`/docs/get-started`), advanced articles (`/docs/developer-guide`), and the What's New (`/docs/whats-new.md`) and Upgrade Guide (`/docs/upgrade-guide.md`) pages.
 

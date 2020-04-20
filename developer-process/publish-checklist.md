@@ -3,14 +3,15 @@
 
 ## Create NPM account
 
-1. Get an account at [npm](https://npmjs.com). Ask framework owners to be added to the proper organizations.
-2. Install [npmrc](https://www.npmjs.com/package/npmrc) and follow its instructions to create a public profile.
+1. Get an account at [npm](https://npmjs.com).
+2. Ask framework owners to be added to the proper organizations.
+3. If you have multiple npm profiles, [npmrc](https://www.npmjs.com/package/npmrc) is recommended to manage them.
 
 
 ## Patch release
 
 1. Switch to the latest release branch.
-  ```
+  ```bash
   git checkout <X.x>-release
   git pull
   git log
@@ -21,7 +22,7 @@
 
 4. Test the branch by running `npm run test` and website examples.
 
-5. Update CHANGELOG.md, making sure all commits and PRs merged after release are recorded properly:
+5. Update CHANGELOG.md, making sure all commits and PRs merged after the last release are recorded properly. **Only commits that affect the published content on NPM should be included**, for example changes to the source code, transpile configurations, and package.json.
 <div align="center">
   <div>
     <img src="https://raw.github.com/visgl/deck.gl-data/master/images/dev-docs/publish-guideline/image4.png" />
@@ -31,7 +32,6 @@
 
 6. Make sure you are using the correct NPM profile, then run the publish script:
   ```bash
-  npmrc public
   git add .
   npm run publish prod
   ```
@@ -46,15 +46,14 @@
   git pull
   ```
 
-2. Test the branch by running `npm run test` and website examples and layer-browser.
+2. Test the branch by running `npm run test` and website examples.
 
-3. Update CHANGELOG.md.
+3. Update CHANGELOG.md, making sure all commits and PRs merged after the last release are recorded properly. **Only commits that affect the published content on NPM should be included**, for example changes to the source code, transpile configurations, and package.json.
 
 4. Only if this is the first pre-release of a new version: open `lerna.json`, change the `version` field to `<version>-alpha.0` or `<version>-beta.0`.
 
 5. Make sure you are using the correct NPM profile, then run the publish script:
   ```bash
-  npmrc public
   git add .
   npm run publish beta
   ```
@@ -92,7 +91,7 @@
 
 ### Pre-release checks
 
-5. The files inside `website/dist` or `website/public` are the production build of the website. Stage the website on a static server to test in all supported OS and browsers.
+5. The files inside `website/dist` or `website/public` are the production build of the website. Stage the website on a static server (e.g. your personal GitHub pages) to test in all supported OS and browsers.
 
 6. Test the branch by running `npm run test` and website examples.
 
@@ -102,7 +101,6 @@
 
 9. Make sure you are using the correct NPM profile, then run the publish script:
   ```bash
-  npmrc public
   git add .
   npm run publish prod
   ```
@@ -111,12 +109,7 @@
 
 ### Publish the website
 
-* Copy the content of `website/dist` or `website/public` folder to a different place
-* Now checkout `gh-pages` branch (`git checkout gh-pages`)
-* copy the contents of dist folder saved in step#5 to root folder (deck.gl/)
-* `git add -u` (to make sure no untracked files are added) and commit (if commit fails, stash your changes, switch to master, yarn, switch back to gh-pages, apply stash and try commit again)
-* `git push` to update remote `gh-pages` branch.
-
-Congratulations, you have updated the deck.gl website.
-
-When possible, first test the website on a staging environment (e.g. your personal GitHub pages).
+In the website directory, run:
+```bash
+yarn deploy
+```

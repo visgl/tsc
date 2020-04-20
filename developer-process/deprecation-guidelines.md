@@ -1,30 +1,29 @@
 # Deprecation Guidelines
 
-Every feature removal should be given careful thought. Gently deprecating things (keep supporting them for 1+ release with a console warning) has a big value and is the preference.
+Deprecated APIs generally go through the following stages:
 
-* But sometimes the price in e.g. complexity or code overhead can be too big (thinking about deck.gl v4 which has three big deprecated ChoroplethLayers that take up a lot of space in the app bundle but are used by very few apps. One could question whether keeping them was the right choice). The situation is similar for the less frequently used Overlays in react-map-gl v3.
+1. Long-tail. During this phase, the API is marked as "deprecated." Code referencing it continues to work, but a warning is logged to the console that asks developers to upgrade their usage.
+2. End-of-life. The API no longer works, and if it's referenced, an error is logged to the console that asks developers to upgrade their usage.
+3. Removed. Legacy usage is no longer monitored and will fail without a warning.
 
-* In cases where we can't or won't do gentle deprecation, we should document the breaking changes in an upgrade guide.
+Each phase change must be reflected in the "Upgrade Guide" of the release.
 
-* I'm in favor of following what Facebook does with React in general - console.warn for API deprecations and clearly stating in the CHANGELOG and then deprecate 2-3 versions later.
+General rules for deprecation:
 
-* The question also is when to eventually do the deprecation. Do we do it in a minor patch, or wait for a major version bump?
+- No deprecation in patch releases.
+- A feature can enter phase 1 (long-tail) in a new minor release.
+- A feature can move from phase 1 (long-tail) to phase 2 (end-of-life) in a new major release. Important features (widely used in examples and likely used by most users) should remain in phase 1 for at least a full major release.
+- A feature can move from phase 2 (end-of-life) to phase 3 (removed) in a new major release.
+- Features clearly marked as experimental (both via naming convention and documentation) can be directly removed in a new minor release.
 
- * iven we already have a few majors, everything that is potentially breaking should be done in a major
- @ibgreen
+## Example
 
-* Isn't the key consideration that we should provide some reasonable time for users to update? If a feature has been deprecated for 6+ months, and we are cutting a new major release, it would seem acceptable to remove it.
+Option `dashed: <bool>` is intended to be replaced by `dashedArray: <number[]>`. The new feature is first released in v 3.1. In this version, any code using `dashed` will see it continued to work with the following warning:
 
-* If it was just deprecated a week earlier in a minor release, and we are cutting a new major release, then we should probably keep it around as deprecated for another major release.
+<div style="color:yellow;background:orange;">`dashed` is deprecated. Use `dashedArray` instead.</div>
 
-* Even if it has only been deprecated for a week and we are about to draft a new major, we should take the opportunity to remove it completely as soon as possible. If users want to update to the latest major and stay 
-* gently deprecate with console.warn when possible (and not too burdensome)
+The behavor will continue throughout v4.x. In v5.0, any code using `dashed` will not see any effect, with the following error:
 
+<div style="color:red;">`dashed` is removed. Use `dashedArray` instead.</div>
 
-* note API deprecation and removal in CHANGELOG
-* keep deprecated APIs for one major release
-* remove deprecated APIs only on major versions, but don't be shy about it
-
-* Sounds good. But yeah timeline should be sensible. If we're cutting major releases every 2 weeks then we should also re-evaluate life a bit :p.
-
-* It'll help to keep a clear log, going forward, of planned API deprecation and when the warnings were introduced to the user so as we work on new major versions, we can have a clear sense of how much time the user has had to make the necessary changes.
+The behavor will continue throughout v5.x. In v6.0, any code using `dashed` will not see any effect, with no warning or error.

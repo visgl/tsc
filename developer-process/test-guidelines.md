@@ -25,7 +25,7 @@ If we absolutely need to include jsdom we might need to create a third node test
 
 ### Testing WebGL shaders
 
-Unit tests are generally designed to test JavaScript and do not work with GLSL shader source. We use luma.gl's `Transform` class to run unit tests on shader modules in WebGL-enabled environments, and `@luma.gl/debug` to run unit tests on transpiled shader modules under node. See [examples](https://www.github.com/visgl/deck.gl/test/modules/core/shaderlib/project).
+Unit tests are generally designed to test JavaScript and do not work with GLSL shader source. We use luma.gl's `Transform` class to run unit tests on shader modules in WebGL-enabled environments, and `@luma.gl/debug` to run unit tests on transpiled shader modules under node. See [examples](https://www.github.com/visgl/deck.gl/tree/master/test/modules/core/shaderlib/project).
 
 
 ## Browser based tests
@@ -48,7 +48,7 @@ The headless version is automatically run in CI.
 
 ### Render test
 
-WebGL is inheritedly difficult to test. The vis.gl render tests are integration tests based on the submodule `@probe.gl/test-utils`. It renders to a canvas in a Puppeteer instance, takes screenshots and compare them to pre-approved "golden images."
+WebGL is inherently difficult to test. The vis.gl render tests are integration tests based on the submodule `@probe.gl/test-utils`. It renders to a canvas in a Puppeteer instance, takes screenshots and compares them to pre-approved "golden images."
 
 These tests are essential to ensuring the visual integrity of the library and preventing regressions.
 
@@ -60,6 +60,4 @@ Use the render test techniques to test behaviors in response to user interaction
 
 ## Git hooks and CI
 
-For pre-push, CI, publish, we want to run everything we got: the linter, run an error-free build, run multiple tests on node etc. Basically, we want to cast the widest possible net to prevent bugs from making their way into master and into the published packages.
-
-That said, for quick iteration of tests during development, it will be frustrating if too many tests are run each time. Since making sure that e.g. CI etc use all tests typically requires adding all the tests to the main package.json "test" script, in many modules we only run test-fast script for pre-commit hooks.
+Node tests are run pre-commit, all tests are run pre-push and in CI.

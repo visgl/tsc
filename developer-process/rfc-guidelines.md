@@ -1,6 +1,6 @@
 # RFC Guidelines
 
-Implementation of non-trivial new features should typically be started off with the creation of an RFC (Request for Comments) to make sure we have a complete story before making big modifications to the code base. It also allow the bigger team (as well as the community) to stay engaged, comment and contribute insights.
+Implementation of non-trivial new features should typically be started off with the creation of an RFC (Request for Comments).
 
 
 ## RFC structure
@@ -26,9 +26,9 @@ Encouraged:
 
 Reviews are a crucial part of the RFC process. The core developers will review RFCs (and of course, comments from the community are always welcome). Recommended review criteria:
 
-* Is the marketing pitch resonate? Can anything be tweaked to make it more "relevant"?
-* Is it a clear proposal? If mainly a list of options, it should be marked as "early draft, not ready for review". The reviewers should be able to critique actual proposals, not have to make their own choices?
-* Use cases - is the proposal generic enough
+* Does the marketing pitch resonate? Can it be made more "relevant"?
+* Is it a clear proposal? If mainly a list of options, it should be marked as "early draft, not ready for review". The reviewers should be able to critique actual proposals, not have to make their own choices.
+* Use cases - is the proposal generic enough?
 * Is the scope reasonable? If too big, any way to break into parallel or sequential RFCs?
 * Does it consider all angles (e.g. rendering/picking/event handling/...).
 * Complexity - Does it add much complexity? Is it justified, considering "tax" on maintenance and future features?
@@ -43,12 +43,8 @@ RFCs should be listed in the frameworks RFC overview page. Since RFCs can be in 
 
 | RFC Status       | Description |
 | ---              | --- |
-| **Proposed**     | Call for an RFC to be written, not yet available. |
 | **Draft**        | Work-in-progress, not ready for formal review |
-| **Pre-Approved** | No major initial objections, draft pre-approved for prototyping |
-| **Review**       | Ready for formal review |
 | **Approved**     | Approved, ready for implementation |
-| **Experimental** | Approved and implemented as experimental API |
 | **Implemented**  | Approved and implemented (as officially supported API) |
 | **Deferred**     | Review uncovered reasons not to proceed at this time |
 | **Rejected**     | Review uncovered reasons not to proceed |

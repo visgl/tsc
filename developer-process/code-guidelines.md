@@ -5,11 +5,11 @@
 
 ### JavaScript/ECMAScript version
 
+* We use the latest JS standard from ES2018 and will move up to ES2019, ES2020 as long as features are supported in evergreen browsers and active Node LTS releases.
 * We use pure/standard ECMAScript (stage-4 proposals) but no stage-1,2,3 proposals.
 * We only use ECMAScript features that work without transpilation directly in **latest** Chrome and Node versions (this is essentially all stage-4 features).
-* In rare cases, a specific library
+* In rare justified cases, a library may specify exceptions.
 
-For more information see the appendix about JavaScript versions at the end of this page.
 
 ### JSX
 
@@ -30,7 +30,7 @@ Prettier and eslint with Uber's standard config are used to enforce coding style
 ## Exports
 
 * We avoid placing excessive index.js files in every directory.
-* We avoid and `export *` constructions, favoring explicit exports at the top level.
+* We avoid `export *` constructions, favoring explicit exports at the top level.
 * We prefer individual exports over exporting container objects to maximize tree-shakability.
 
 * Experimental exports start with an underscore `_`.
@@ -78,71 +78,9 @@ Exceptions can be made if the particular condition being asserted against is a p
 Our frameworks have local definitions of `assert`, to avoid bundlers injecting the bloated node polyfill.
 
 
-### Why do we use asserts?
-
-The problem that (most of) our asserts are targeting:
-
-* Asserts move the detection of errors related to apps passing incorrect parameters from the internals of our libraries to the API surface of these libraries.
-* This means that app developers will get an exception immediately in code that he is familiar with (his invocation of the library API) rather than later getting a mystic failure in the internal of our library.
-* A number of asserts have been added after developers "waster" time debugging issues just to trace them back to the app sending in a bad parameter.
-
-
-### Why do we not include error messages in asserts?
-
-We removed the messages since we felt that they added bundle size bloat to our already "oversized" libraries, but limited additional debugging value.
-
-* One reason that messages add limited value is that as soon as an assert happens, it is trivial to turn on "break on exceptions" and rerun.
-* When the debugger stops at the assert in the non-minified version, showing clearly which param is wrong in which API call, a human readable error message adds little.
-
-
-### But, asserts are not useful with minified version?
-
-While there are rare cases when an error only happens in the minified version, there are so many other limitations with debugging in minified versions.
-
-
-### Transpiler
+## Transpiler
 
 We use babel-preset-env to transpile code for publishing.
 
-We use buble or babel to transpile examples.
+We use babel to transpile examples if needed.
 
-
-
-## Appendix JavaScript Versions
-
-ECMAScript Versions vs. Stage-4 Proposals
-
-- ES2019 is finalized, we just need to make sure the latest Chrome (Yes) and Node 11 (?) support it before we start using it.
-
-### [ES2016](http://2ality.com/2016/01/ecmascript-2016.html)
-- Exponentiation (x ** y === Math.pow(x, y))
-- Array.prototype.includes
-
-### [ES2017](http://2ality.com/2016/02/ecmascript-2017.html)
-- **Async Functions**
-- **Shared memory (Transferring ArrayBuffer to workers)**
-- Atomics - [Processing ArrayBuffer in multiple workers](http://2ality.com/2017/01/shared-array-buffer.html)
-- Trailing commas in function parameter lists and calls
-- String.prototype.padStart/padEnd
-- Object.values/Object.entries, Object.getOwnPropertyDescriptors()
-
-### [ES2018](http://2ality.com/2017/02/ecmascript-2018.html)
-- **Asynchronous Iteration**
-- **Object Rest/Spread Properties**
-- **Promise.prototype.finally()**
-- RegExp: named capture groups, Unicode Property Escapes, Lookbehind Assertions, s (dotAll) flag
-- Template Literal Revision
-
-### [ES2019](http://2ality.com/2018/02/ecmascript-2019.html)
-- **Optional catch binding**
-- **Array.prototype.{flat,flatMap}**
-- Object.fromEntries
-- String.prototype.{trimStart,trimEnd}
-- Symbol.prototype.description
-- Array.prototype.sort() is now required to be stable
-- Internal: Well-formed JSON.stringify, JSON superset, Function.prototype.toString revision
-
-### NOT PART OF ECMAScript
-- [Class Fields](https://github.com/tc39/proposal-class-fields)
-- [Arrow Methods](https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1) etc
-- ...
