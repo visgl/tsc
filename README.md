@@ -7,5 +7,4 @@ The section tracks the current governing body of the community. For their respon
 
 - [Ib Green](https://github.com/ibgreen)
 - [Xiaoji Chen](https://github.com/Pessimistress)
-- [Tarek Sherif](https://github.com/tsherif)
-- [Ravi Akkenapally](https://github.com/1chandu)
+- [Alberto Asuero](https://github.com/alasarr)
