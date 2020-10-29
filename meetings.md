@@ -1,15 +1,19 @@
 # Open Governance Meeting Log
 
-deck.gl and the remaining vis.gl frameworks have been under [Open Governance since version 8.2](https://medium.com/vis-gl/deck-gl-8-2-moves-to-open-governance-379f147c15bb).
-
 This page contains agendas and presentations from the community planning meetings.
+
+- deck.gl and the remaining vis.gl frameworks have been under [Open Governance since version 8.2](https://medium.com/vis-gl/deck-gl-8-2-moves-to-open-governance-379f147c15bb).
+
+
+## Upcoming Meetings
+
+The next vis.gl community planning meeting will be held in Q1 2021, exact date to be announced later. 
 
 To get invitations and updates for upcoming meetings, please join the [vis.gl announcements](https://lists.uc.foundation/g/visgl) mailing list (low volume).
 
 ## October 8, 2020 - deck.gl 8.4 and 8.5 planning
 
 [Main Presentation](https://docs.google.com/presentation/d/1vSbP1kewBEw2UlB5arZPi44G8BgjH4SqT0lsFjVBdM8)
-
 
 | Presenter | Deck |
 | --- | --- |
