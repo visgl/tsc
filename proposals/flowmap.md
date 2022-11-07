@@ -1,6 +1,8 @@
 # FlowmapBlue and flowmap.gl
 
-This is a proposal to transfer FlowmapBlue and flowmap.gl to the vis.gl project within the OpenJS Foundation.
+This is a proposal to transfer FlowmapBlue and flowmap.gl to vis.gl, a OpenJS Foundation project within the Open Visuaization Collaboration Space (formerly the Urban Computing Foundation).
+
+> Note: This proposal was originally accepted by the vis.gl Technical Steering Committee (TSC) on 2022-06-07 when the Urban Computing Foundation merged into the OpenJS Foundation.
 
 ## Project description
 
