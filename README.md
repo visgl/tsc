@@ -8,3 +8,4 @@ The section tracks the current governing body of the community. For their respon
 - [Ib Green](https://github.com/ibgreen)
 - [Xiaoji Chen](https://github.com/Pessimistress)
 - [Alberto Asuero](https://github.com/alasarr)
+- [Chris Gervang](https://github.com/chrisgervang)
