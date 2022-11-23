@@ -22,7 +22,7 @@ We’re also looking to expand the number of contributors and users coming from 
 - [flowmap.gl Code of Conduct](https://github.com/FlowmapBlue/flowmap.gl/blob/main/CODE_OF_CONDUCT.md)
 
 
-## Sponsor from TAC
+## Sponsor from TSC
 
 Ib Green
 
@@ -63,7 +63,7 @@ Ib Green
 
 ## Briefly describe the project's leadership team and decision-making process
 
-Ilya Boyandin (Unfolded) - current tech lead at Uber Elevate
+Ilya Boyandin (Unfolded) - data visualization engineer
 Currently decisions are made by Ilya Boyandin. 
 PRs are expected to follow [vis.gl tsc guidelines](https://github.com/visgl/tsc/tree/master/developer-process).
 
