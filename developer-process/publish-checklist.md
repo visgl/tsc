@@ -80,13 +80,14 @@
   git push
   ```
 
-### Build the website
+### Build and test the website
 
 4. Under the release branch:
  ```bash
  cd website
  yarn
- yarn build
+ yarn build # build website
+ yarn serve # test website locally
  ```
 
 ### Pre-release checks
@@ -113,3 +114,11 @@ In the website directory, run:
 ```bash
 yarn deploy
 ```
+
+## Useful Tricks
+
+### Website staging
+
+For [`Gastby`](https://www.gatsbyjs.org/) generated websites, the `index.html` refers to the absolute paths of the generated files under `PATH_PREFIX` (specified in `website/gatsby-config.js`). 
+So the deployed path needs to match `PATH_PREFIX`. i.e. if you'd like to deploy `loaders.gl` to `<personal>.github.io/loaders.gl` then `PATH_CONFIG` should be set to `/loaders.gl`. 
+**Note: this is for staging and testing purpose, you should not be commit to production** 
