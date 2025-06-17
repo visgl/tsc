@@ -3,7 +3,7 @@ This repo contains the organization charter, community guideline and developer p
 
 ## Steering Committee Members
 
-The section tracks the current governing body of the community. For their responsibilities and the decision-making process, see [Technical Charter](/Technical%20Charter.md) and [Community Governance Guidelines](/governance.md).
+The section tracks the current governing body of the community. For their responsibilities and the decision-making process, see [Technical Charter](/CHARTER.md) and [Community Governance Guidelines](/GOVERNANCE.md).
 
 - [Ib Green](https://github.com/ibgreen)
 - [Xiaoji Chen](https://github.com/Pessimistress)
