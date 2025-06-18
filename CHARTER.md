@@ -8,7 +8,7 @@ All collaborators must allow open participation from any individual or organizat
 
 ## Section 1: Scope
 
-`vis.gl` is to provide a comprehensive, open-source solution for GPU-powered visualizations of large-scale datasets, in particular geospatial data visualizations.
+`vis.gl` is to provide a comprehensive, open-source solution for GPU-powered visualizations of large-scale datasets, in particular geospatial data visualizations. The `vis.gl` project consists of many different sub-projects, such as a layer-based visualization framework, GPU toolkit, basemap react components, and more. The project is designed to be modular, so that it can be used in a variety of different environments and for different purposes.
 
 The scope of project includes documentation, testing, integration and the creation of other artifacts that aid the development, deployment, operation or adoption of the open source project.
 
