@@ -43,7 +43,7 @@ vis.gl is governed by its Technical Steering Committee (TSC). The current list o
 
 ## Section 4: Roles & Responsibilities 
 
-The TSC oversees the technical scope outlined in Section 1 and may delegate tasks to Maintainers and Contributors. Details on membership, roles, responsibilities, and decision-making are defined in the `GOVERNANCE.md` document.
+The roles and responsibilities of `vis.gl`'s TSC are described in the `GOVERNANCE.md` document.
 
 ### Section 4.1 Project Operations & Management
 
