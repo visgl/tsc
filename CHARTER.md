@@ -39,7 +39,7 @@ Section Intentionally Left Blank
 
 ## Section 3: vis.gl's TSC Governing Body
 
-vis.gl is governed by its Technical Steering Committee (TSC). The current list of TSC members is maintained in the vis.gl organization’s GitHub repository.
+vis.gl is governed by its Technical Steering Committee (TSC). The current list of Steering Committee Members is maintained in the vis.gl organization’s [TSC repository](https://github.com/visgl/tsc).
 
 ## Section 4: Roles & Responsibilities 
 
