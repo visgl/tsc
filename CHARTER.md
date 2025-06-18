@@ -29,21 +29,21 @@ Section Intentionally Left Blank
 
 ## Section 2: Relationship with OpenJS Foundation CPC.
 
-Technical leadership for `vis.gl` is delegated by the OpenJS Cross-Project Council (CPC) through this charter. The `vis.gl` Technical Steering Committee (TSC) is responsible for all technical aspects of the vis.gl project and its sub-projects. The OpenJS Foundation's business leadership is the Board of Directors (the “Board”).
+Technical leadership for the projects within the [OpenJS Foundation](https://openjsf.org/) is delegated to the projects through their project charters by the [OpenJS Foundation Cross-Project Council](https://openjsf.org/about/governance/) (CPC). In the case of the `vis.gl` project, it is delegated to the [Steering Committee Members](https://github.com/visgl/tsc/blob/master/README.md#steering-committee-members) (the “TSC”). The OpenJS Foundation's business leadership is the Board of Directors (the “Board”).
 
-The TSC operates independently on technical matters. This charter may be amended by the TSC (via a majority vote) subject to CPC approval. The CPC may also propose amendments, but does not interfere with day-to-day technical decisions.
+This `vis.gl` Charter reflects a carefully constructed balanced role for the TSC and the CPC in the governance of the OpenJS Foundation. The charter amendment process is for the TSC to propose changes using simple majority of the full TSC, the proposed changes being subject to review and approval by the CPC. The CPC may additionally make amendments to the project charter at any time, though the CPC will not interfere with day-to-day discussions, votes, or meetings of the TSC.
 
 ### 2.1 Other Formal Project Relationships
 
 Section Intentionally Left Blank
 
-## Section 3: vis.gl's TSC Governing Body
+## Section 3: `vis.gl`'s TSC Governing Body
 
-vis.gl is governed by its Technical Steering Committee (TSC). The current list of Steering Committee Members is maintained in the vis.gl organization’s [TSC repository](https://github.com/visgl/tsc).
+`vis.gl` is governed by its [Steering Committee Members](https://github.com/visgl/tsc/blob/master/README.md#steering-committee-members).
 
 ## Section 4: Roles & Responsibilities 
 
-The roles and responsibilities of `vis.gl`'s TSC are described in the `GOVERNANCE.md` document.
+The roles and responsibilities of `vis.gl`'s TSC are described in [GOVERNANCE.md](./GOVERNANCE.md).
 
 ### Section 4.1 Project Operations & Management
 
@@ -51,7 +51,7 @@ Section Intentionally Left Blank
 
 ### Section 4.2: Decision-making, Voting, and/or Elections
 
-Section Intentionally Left Blank
+The project will define a consensus-seeking governance model in [GOVERNANCE.md](./GOVERNANCE.md) as need arises.
 
 ### Section 4.3: Other Project Roles
 
@@ -59,4 +59,5 @@ Section Intentionally Left Blank
 
 ## Section 5: Definitions
 
-Section Intentionally Left Blank
+- *Steering committee member*: A core maintainer of the project, provides leadership and oversees feature and technical directions.
+- *Maintainer*: Steering committee members delegate project responsibilities to maintainers, as documented in [GOVERNANCE.md](./GOVERNANCE.md).
