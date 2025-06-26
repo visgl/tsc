@@ -51,7 +51,17 @@ Section Intentionally Left Blank
 
 ### Section 4.2: Decision-making, Voting, and/or Elections
 
-The project will define a consensus-seeking governance model in [GOVERNANCE.md](./GOVERNANCE.md) as need arises.
+The vis.gl Technical Steering Committee (TSC) operates on a consensus-seeking basis. Most decisions are expected to be resolved through open discussion and agreement. However, when consensus cannot be reached, any TSC member may call for a vote.
+
+ - **Eligibility:** All steering committee members are voting members and may participate in any vote.
+
+ - **Quorum:** A quorum is established when at least 50% of steering committee members members are present. The steering committee members may meet without quorum, but may not make binding decisions.
+
+ - **Votes During Meetings:** When quorum is met, decisions require a simple majority of the steering committee members present.
+
+ - **Electronic Votes:** Decisions made asynchronously (e.g., over email or GitHub) require a simple majority of all steering committee members.
+
+ - **Escalation:** If a vote results in a tie or fails to resolve a dispute, any TSC member may refer the matter to the OpenJS Foundation Board for mediation or guidance.
 
 ### Section 4.3: Other Project Roles
 
