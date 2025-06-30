@@ -1,8 +1,8 @@
 # vis.gl Charter
-
+Vis.gl aims to provide an open-source JavaScript framework for high-performance visualizations of large datasets on the web. It prioritizes strong support for geospatial data visualization, while also being flexible to cater to diverse non-geospatial visualization needs. It is designed to make advanced visualization techniques accessible to a wide range of developers by providing a user-friendly API and well-documented framework.
 ## Section 0: Guiding Principles
 
-The `vis.gl` project is part of the [OpenJS Foundation][https://openjsf.org], which operates transparently, openly, collaboratively, and ethically. Project proposals, timelines, and status must not merely be open, but also easily visible to outsiders.
+The `vis.gl` project is part of the [OpenJS Foundation](https://openjsf.org), which operates transparently, openly, collaboratively, and ethically. Project proposals, timelines, and status must not merely be open, but also easily visible to outsiders.
 
 All collaborators must allow open participation from any individual or organization meeting the requirements for contributing under this Charter and any policies adopted by the TSC, regardless of competitive interests. The community must not exclude any participant based on criteria other than those applied consistently and reasonably to all collaborators.
 
