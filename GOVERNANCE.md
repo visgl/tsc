@@ -35,7 +35,7 @@ All of a maintainer's privileges (2a), and the following:
 - Organize and moderate community discussions, enforce the code of conduct;
 - Ensure that the dev process is followed by all contributors;
 - Ensure the consistency and quality of the documentation;
-- Manage blog posts, material for conference and meetup talks, and other brand presence in accordance with the [OpenJS Project Marketing Guidelines](https://drive.google.com/file/d/1vE2DlQXwlyUsPcb6wd6V4HkjraLZevyu/view).
+- Manage blog posts, material for conference and meetup talks, and other brand presence in accordance with the OpenJS Project Marketing Guidelines.
 
 ### 1c. Becoming a steering committee member
 
@@ -64,7 +64,7 @@ If a steering committee member can/will no longer perform their duties, they can
   + Push to a branch in the main repo.
   + Be added as a code reviewer by other contributors.
 - Represent vis.gl publicly
-  + Publish articles in the [vis-gl blog](https://medium.com/vis-gl) in accordance with the [OpenJS Project Marketing Guidelines](https://drive.google.com/file/d/1vE2DlQXwlyUsPcb6wd6V4HkjraLZevyu/view).
+  + Publish articles in the [vis-gl blog](https://medium.com/vis-gl) in accordance with the OpenJS Project Marketing Guidelines.
   + Promote vis.gl at conferences and meetups.
 
 
