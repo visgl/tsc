@@ -29,7 +29,7 @@ Section Intentionally Left Blank
 
 ## Section 2: Relationship with OpenJS Foundation CPC.
 
-Technical leadership for the projects within the [OpenJS Foundation](https://openjsf.org/) is delegated to the projects through their project charters by the [OpenJS Foundation Cross-Project Council](https://openjsf.org/about/governance/) (CPC). In the case of the `vis.gl` project, it is delegated to the [Steering Committee Members](https://github.com/visgl/tsc/blob/master/README.md#steering-committee-members) (the “TSC”). The OpenJS Foundation's business leadership is the Board of Directors (the “Board”).
+Technical leadership for the projects within the [OpenJS Foundation](https://openjsf.org/) is delegated to the projects through their project charters by the [OpenJS Foundation Cross-Project Council](https://openjsf.org/about/governance/) (CPC). In the case of the `vis.gl` project, it is delegated to the [Technical Steering Committee](https://github.com/visgl/tsc/blob/master/README.md#steering-committee-members) (the “TSC”). The OpenJS Foundation's business leadership is the Board of Directors (the “Board”).
 
 This `vis.gl` Charter reflects a carefully constructed balanced role for the TSC and the CPC in the governance of the OpenJS Foundation. The charter amendment process is for the TSC to propose changes using simple majority of the full TSC, the proposed changes being subject to review and approval by the CPC. The CPC may additionally make amendments to the project charter at any time, though the CPC will not interfere with day-to-day discussions, votes, or meetings of the TSC.
 
