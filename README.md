@@ -1,7 +1,7 @@
 This repo contains the organization charter, community guideline and developer process for all vis.gl projects.
 
 
-## Steering Committee Members
+## Technical Steering Committee
 
 The section tracks the current governing body of the community. For their responsibilities and the decision-making process, see [Technical Charter](/CHARTER.md) and [Community Governance Guidelines](/GOVERNANCE.md).
 
