@@ -13,8 +13,9 @@ There are three types of roles in the community that maintains this project:
 - *Maintainer*: A core developer of the project, oversees one or more feature areas, and shares the responsibility of release. Also referred to as a "feature owner."
 - *Contributor*: A casual participant on GitHub, including reporting bugs; answering questions; developing a third-party module that extends the capabilities of ours; creating public examples; submitting a PR for documentation enhancement or minor bug fix. Always welcome.
 
-The list of current steering committee members are documented in the visgl org's [TSC repo](../README.md). Maintainers are documented in each repo's contributing guide (`/CONTRIBUTING.md`).
+The list of current steering committee members are documented in the visgl org's [TSC repo](../README.md). Maintainers are documented in each repo's contributing guide (e.g. [`/CONTRIBUTING.md`](https://github.com/visgl/deck.gl/blob/master/CONTRIBUTING.md)).
 
+The [TSC Charter](./CHARTER.md) governs the operations of the TSC. All changes to the Charter need approval by the OpenJS Foundation Cross-Project Council (CPC).
 
 ## The Steering Committee
 
@@ -34,7 +35,7 @@ All of a maintainer's privileges (2a), and the following:
 - Organize and moderate community discussions, enforce the code of conduct;
 - Ensure that the dev process is followed by all contributors;
 - Ensure the consistency and quality of the documentation;
-- Manage blog posts, material for conference and meetup talks, and other brand presence.
+- Manage blog posts, material for conference and meetup talks, and other brand presence in accordance with the OpenJS Project Marketing Guidelines.
 
 ### 1c. Becoming a steering committee member
 
@@ -50,7 +51,6 @@ An existing maintainer can be nominated to join the steering committee by other 
 
 If a steering committee member can/will no longer perform their duties, they can be removed from the steering committee by the consensus of the rest of the steering committee members.
 
-
 ## Maintainers
 
 ### 2a. A maintainer's privileges
@@ -64,7 +64,7 @@ If a steering committee member can/will no longer perform their duties, they can
   + Push to a branch in the main repo.
   + Be added as a code reviewer by other contributors.
 - Represent vis.gl publicly
-  + Publish articles in the [vis-gl blog](https://medium.com/vis-gl).
+  + Publish articles in the [vis-gl blog](https://medium.com/vis-gl) in accordance with the OpenJS Project Marketing Guidelines.
   + Promote vis.gl at conferences and meetups.
 
 
