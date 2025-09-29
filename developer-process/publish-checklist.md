@@ -20,7 +20,7 @@
 
 3. If there were several conflicts in cherry-pick process and you have to make several changes in process of selecting partial changes from a PR, create a PR, get teams review, otherwise just push all changes into release branch directly.
 
-4. Test the branch by running `npm run test` and website examples.
+4. Test the branch by running `yarn test browser` and website examples.
 
 5. Update CHANGELOG.md, making sure all commits and PRs merged after the last release are recorded properly. **Only commits that affect the published content on NPM should be included**, for example changes to the source code, transpile configurations, and package.json.
 <div align="center">
@@ -30,10 +30,15 @@
   </div>
 </div>
 
-6. Make sure you are using the correct NPM profile, then run the publish script:
+6. Make sure you have **no untracked changes**, except for the modified CHANGELOG.md
   ```bash
-  git add .
-  npm run publish prod
+  git add CHANGELOG.md
+  git status --porcelain
+  ```
+  
+7. Run the publish script, the actual publish will then happen via a [Github workflow](https://github.com/visgl/deck.gl/blob/master/.github/workflows/release.yml):
+  ```bash
+  yarn publish-prod
   ```
   Double check the version numbers before confirming to publish.
 
@@ -46,22 +51,26 @@
   git pull
   ```
 
-2. Test the branch by running `npm run test` and website examples.
+2. Test the branch by running `yarn test browser` and website examples.
 
 3. Update CHANGELOG.md, making sure all commits and PRs merged after the last release are recorded properly. **Only commits that affect the published content on NPM should be included**, for example changes to the source code, transpile configurations, and package.json.
 
 4. Only if this is the first pre-release of a new version: open `lerna.json`, change the `version` field to `<version>-alpha.0` or `<version>-beta.0`.
 
-5. Make sure you are using the correct NPM profile, then run the publish script:
+5. Make sure you have **no untracked changes**, except for the modified CHANGELOG.md
   ```bash
-  git add .
-  npm run publish beta
+  git add CHANGELOG.md
+  git status --porcelain
+  ```
+  
+6. Run the publish script, the actual publish will then happen via a [Github workflow](https://github.com/visgl/deck.gl/blob/master/.github/workflows/release.yml):
+  ```bash
+  yarn publish-beta
   ```
   Double check the version numbers before confirming to publish.
 
 
 ## Major/Minor release
-
 
 ### Cut the release branch
 
@@ -73,43 +82,32 @@
   ```
 2. Update the links in documentation and website to point to the current branch:
   ```bash
-  npm run update-release-branch <X.x>
+  yarn update-release-branch <X.x>
   ```
 3. Push to upstream:
   ```bash
   git push
   ```
 
-### Build the website
+4. Review branch protection rules, e.g. https://github.com/visgl/deck.gl/settings/branches - it may be necessary to a new rule for the newly created branch.
 
-4. Under the release branch:
- ```bash
- cd website
- yarn
- yarn build
- ```
+5. Follow the standard [patch release](./publish-checklist.md#patch-release) process to do the release
 
-### Pre-release checks
+## Building the website
 
-5. The files inside `website/dist` or `website/public` are the production build of the website. Stage the website on a static server (e.g. your personal GitHub pages) to test in all supported OS and browsers.
+The website is built and [published automatically](https://github.com/visgl/deck.gl/blob/master/.github/workflows/website.yml) from the newest release branch
 
-6. Test the branch by running `npm run test` and website examples.
+## Tips
 
-7. Check all the bug/feature tickets under the current github milestone. Make sure they are properly listed in What's New (`/docs/whats-new.md`) and Upgrade Guide (`/docs/upgrade-guide.md`). Open a PR to update these pages.
+### Generate CHANGELOG entries
 
-8. Update CHANGELOG.md.
-
-9. Make sure you are using the correct NPM profile, then run the publish script:
-  ```bash
-  git add .
-  npm run publish prod
-  ```
-  Double check the version numbers before confirming to publish.
-
-
-### Publish the website
-
-In the website directory, run:
+Add the following git alias in `~/.gitconfig` to easily generate entries since the last release:
 ```bash
-yarn deploy
+cl = !git log $(git describe --tags --abbrev=0)..HEAD --abbrev-commit --pretty=format:'- %s'
+```
+
+With clipboard support for OSX:
+
+```bash
+cl = !git log $(git describe --tags --abbrev=0)..HEAD --abbrev-commit --pretty=format:'- %s'| pbcopy && git log $(git describe --tags --abbrev=0)..HEAD --abbrev-commit --pretty=format:'- %s'
 ```
