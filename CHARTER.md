@@ -48,16 +48,6 @@ Section Intentionally Left Blank
 
 Decision making and voting follow the practices adopted by the CPC and described in [Section 9](https://github.com/openjs-foundation/cross-project-council/blob/main/CPC-CHARTER.md#section-9-decision-making) and [Section 10](https://github.com/openjs-foundation/cross-project-council/blob/main/CPC-CHARTER.md#section-10-voting) of the CPC Charter respectively.
 
- - **Eligibility:** All steering committee members are voting members and may participate in any vote.
-
- - **Quorum:** A quorum is established when at least 50% of steering committee members members are present. The steering committee members may meet without quorum, but may not make binding decisions.
-
- - **Votes During Meetings:** When quorum is met, decisions require a simple majority of the steering committee members present.
-
- - **Electronic Votes:** Decisions made asynchronously (e.g., over email or GitHub) require a simple majority of all steering committee members.
-
- - **Escalation:** If a vote results in a tie or fails to resolve a dispute, any TSC member may refer the matter to the OpenJS Foundation Board for mediation or guidance.
-
 ### Section 4.3: Other Project Roles
 
 Section Intentionally Left Blank
