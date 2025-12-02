@@ -1,6 +1,6 @@
 # vis.gl Charter
 
-Vis.gl aims to provide an open-source JavaScript framework for high-performance visualizations of large datasets on the web. It prioritizes strong support for geospatial data visualization, while also being flexible to cater to diverse non-geospatial visualization needs. It is designed to make advanced visualization techniques accessible to a wide range of developers by providing a user-friendly API and well-documented framework.
+Vis.gl aims to provide an open-source JavaScript framework for high-performance visualizations of large datasets on the web. It prioritizes strong support for geospatial data visualization, while also being flexible enough to cater to diverse non-geospatial visualization needs. It is designed to make advanced visualization techniques accessible to a wide range of developers by providing a user-friendly API and well-documented framework.
 
 ## Section 0: Guiding Principles
 
@@ -12,7 +12,7 @@ Power shouldn’t come from complexity: layers, not low-level rendering; clear a
 
 ## Section 1: Scope
 
-`vis.gl` is to provide a comprehensive, open-source solution for GPU-powered visualizations of large-scale datasets, in particular geospatial data visualizations. The `vis.gl` project consists of many different sub-projects, such as a layer-based visualization framework, GPU toolkit, basemap react components, and more. The project is designed to be modular, so that it can be used in a variety of different environments and for different purposes.
+`vis.gl` provides a comprehensive, open-source solution for GPU-powered visualizations of large-scale datasets, in particular geospatial data visualizations. The `vis.gl` project consists of many different sub-projects, such as a layer-based visualization framework, GPU toolkit, basemap react components, and more. The project is designed to be modular, so that it can be used in a variety of different environments and for different purposes.
 
 ### 1.1: In-scope
 
