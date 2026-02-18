@@ -57,7 +57,7 @@
 
 4. Only if this is the first pre-release of a new version: open `lerna.json`, change the `version` field to `<version>-alpha.0` or `<version>-beta.0`.
 
-5. Make sure you have **no untracked changes**, except for the modified CHANGELOG.md
+5. Make sure you have **no untracked changes**, except for the modified CHANGELOG.md staged in the index.
   ```bash
   git add CHANGELOG.md
   git status --porcelain
