@@ -81,7 +81,8 @@ All dependencies are managed through npm/pnpm and listed in the project's `packa
 
 ## Names of initial committers, if different from those submitting proposal
 
-TBD
+- [Ilya Boyandin](https://github.com/ilyabo)
+- [Xun Li](https://github.com/lixun910)
 
 ## Briefly describe the project's leadership team and decision-making process
 
