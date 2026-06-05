@@ -81,7 +81,8 @@ All dependencies are managed through npm/pnpm and listed in the project's `packa
 
 ## Names of initial committers, if different from those submitting proposal
 
-TBD
+- [Ilya Boyandin](https://github.com/ilyabo)
+- [Xun Li](https://github.com/lixun910)
 
 ## Briefly describe the project's leadership team and decision-making process
 
@@ -136,3 +137,11 @@ No immediate infrastructure requests. Technical, financial, or promotional suppo
 The following domain will be transferred to the OpenJS Foundation upon successful graduation from the incubation phase:
 
 - [sqlrooms.org](https://sqlrooms.org)
+
+### Subdomains for example apps
+
+- [ai.sqlrooms.org](https://ai.sqlrooms.org/)
+- [kepler.sqlrooms.org](https://kepler.sqlrooms.org/)
+- [query.sqlrooms.org](https://query.sqlrooms.org/)
+- [motherduck.sqlrooms.org](https://motherduck.sqlrooms.org/)
+- ...
