@@ -8,9 +8,11 @@ Ilya Boyandin
 
 ## Project description
 
-SQLRooms is a framework for building data analytics applications that run entirely in the browser. It combines DuckDB-WASM's SQL capabilities with React to create interactive, client-side analytics tools without requiring a backend.
+SQLRooms is a framework and runtime for building local-first data analytics applications with DuckDB and React. It supports multiple execution modes: fully in-browser analytics with DuckDB-WASM, local-first applications with persistent browser storage, and applications backed by native DuckDB in a local or shared session backend.
 
-The framework provides components and patterns for data visualization, SQL editing, panel layouts, and analytics workflows. It enables developers to build sophisticated JavaScript and TypeScript applications for interactive data exploration, business intelligence, privacy-focused data processing, and AI-assisted analysis.
+The project provides components and patterns for data loading, SQL editing, query execution, data visualization, panel layouts, dashboards, and analytics workflows. It enables developers to build sophisticated JavaScript and TypeScript applications for interactive data exploration, business intelligence, privacy-focused data processing, and AI-assisted analysis.
+
+SQLRooms treats DuckDB not only as an embedded query engine, but as an analytical runtime for portable workspaces. A SQLRooms application can combine data, queries, visualizations, dashboard state, and application-specific UI into a cohesive analytics experience that can run locally, in the browser, or with an optional backend when collaboration, native performance, or larger datasets are needed.
 
 ## Statement on alignment with OpenJS Foundation charter's mission
 
@@ -25,17 +27,18 @@ By joining the OpenJS Foundation, SQLRooms aims to:
 
 ## Impact and users of the project
 
-SQLRooms addresses the growing need for privacy-focused, client-side data analytics tools. By enabling sophisticated data processing entirely within the browser using DuckDB-WASM, SQLRooms expands what web applications can achieve without backend dependencies.
+SQLRooms addresses the growing need for privacy-focused, local-first analytics tools. By combining DuckDB, React, and modern JavaScript application patterns, SQLRooms expands what data applications can do without requiring heavyweight backend infrastructure. It can run fully client-side for private browser-based workflows, while also supporting native DuckDB backends for larger local datasets, desktop applications, and shared analytical sessions.
 
 The project is intended for web developers and data professionals building:
 
 - Interactive data exploration and analysis tools.
 - Custom business intelligence dashboards.
-- Self-contained analytics applications.
-- Privacy-focused workflows where data remains client-side.
-- AI-powered data analysis workflows that run in the browser.
+- Self-contained and portable analytics applications.
+- Local-first desktop or browser-based data applications.
+- Privacy-focused workflows where data remains local or under the user's control.
+- AI-powered data analysis workflows that can inspect data, run queries, and create visualizations.
 
-SQLRooms has the potential to become a foundational framework for browser-based analytics applications. While there are libraries for individual parts of this stack, such as charting, tables, and SQL editors, SQLRooms integrates data management, querying, visualization, and application UI into a cohesive framework.
+SQLRooms has the potential to become a foundational framework for local-first analytics applications in the JavaScript ecosystem. While there are libraries for individual parts of this stack, such as charting, tables, SQL editors, and embedded databases, SQLRooms integrates data management, querying, visualization, workspace state, and application UI into a cohesive framework.
 
 ## Link to current Code of Conduct
 
@@ -51,8 +54,10 @@ TBD
 
 ## Source control
 
-- [SQLRooms on GitHub](https://github.com/sqlrooms/sqlrooms)
+- [SQLRooms organization on GitHub](https://github.com/sqlrooms)
+- [SQLRooms main repository on GitHub](https://github.com/sqlrooms/sqlrooms)
 - [SQLRooms packages on npm](https://www.npmjs.com/org/sqlrooms)
+- [SQLRooms organization on PyPi](https://pypi.org/org/sqlrooms/)
 
 ## Issue tracker
 
@@ -63,11 +68,12 @@ TBD
 All dependencies are managed through npm/pnpm and listed in the project's `package.json` files. Major dependencies include:
 
 - `@duckdb/duckdb-wasm`
+- `duckdb` native DuckDB bindings for backend/runtime integrations
 - `react`
 - `tailwindcss`
 - Visualization and analytics libraries
-
-Dependencies are expected to use MIT or similarly permissive licenses.
+  \*\*
+  Dependencies are expected to use MIT or similarly permissive licenses.
 
 ## Release methodology and mechanics
 
@@ -82,9 +88,7 @@ TBD
 The current leadership team consists of:
 
 - [Ilya Boyandin](https://github.com/ilyabo)
-- [Ib Green](https://github.com/ibgreen)
 - [Xun Li](https://github.com/lixun910)
-- [Nikita Rokotyan](https://github.com/rokotyan)
 
 Leadership membership is based on significant contributions and will be decided through a transparent process that is formalized as the project grows. Individuals outside the leadership team can propose changes via pull requests on GitHub. Contributors who demonstrate consistent, high-quality contributions may be granted commit access after review by the leadership team.
 
@@ -105,6 +109,7 @@ After incubation, SQLRooms aims to become an At-Large Project.
 ## List of project's official communication channels
 
 - [SQLRooms GitHub Discussions](https://github.com/sqlrooms/sqlrooms/discussions)
+- [Slack Channel](https://sqlrooms.org/join-slack)
 
 ## Link to project's website
 
@@ -112,7 +117,7 @@ After incubation, SQLRooms aims to become an At-Large Project.
 
 ## Links to social media accounts
 
-None currently.
+- [YouTube channel](https://www.youtube.com/@sqlrooms)
 
 ## Security policy
 
@@ -120,7 +125,7 @@ SQLRooms will establish a formal security policy as part of the onboarding proce
 
 ## Existing financial sponsorship
 
-The project is currently self-funded by Ilya Boyandin.
+The project is currently funded by Ilya Boyandin and the development is partially supported by Foursquare.
 
 ## Infrastructure needs or requests
 
