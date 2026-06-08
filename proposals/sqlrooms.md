@@ -57,6 +57,8 @@ SQLRooms has the potential to become a foundational framework for local-first an
 - [SQLRooms organization on GitHub](https://github.com/sqlrooms)
 - [SQLRooms main repository on GitHub](https://github.com/sqlrooms/sqlrooms)
 
+We would prefer to keep the GitHub organization but would add vis.gl/openvisualization.org/OpenJS branding.
+
 ## Issue tracker
 
 - [SQLRooms issues](https://github.com/sqlrooms/sqlrooms/issues)
