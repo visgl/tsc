@@ -46,7 +46,7 @@ SQLRooms has the potential to become a foundational framework for local-first an
 
 ## Sponsor from TSC
 
-TBD
+- [Ib Green](https://github.com/ibgreen)
 
 ## Project license
 
