@@ -56,12 +56,15 @@ TBD
 
 - [SQLRooms organization on GitHub](https://github.com/sqlrooms)
 - [SQLRooms main repository on GitHub](https://github.com/sqlrooms/sqlrooms)
-- [SQLRooms packages on npm](https://www.npmjs.com/org/sqlrooms)
-- [SQLRooms organization on PyPi](https://pypi.org/org/sqlrooms/)
 
 ## Issue tracker
 
 - [SQLRooms issues](https://github.com/sqlrooms/sqlrooms/issues)
+
+## Packages
+
+- [SQLRooms packages on npm](https://www.npmjs.com/org/sqlrooms)
+- [SQLRooms organization on PyPi](https://pypi.org/org/sqlrooms/)
 
 ## External dependencies
 
@@ -101,16 +104,10 @@ Formal governance guidelines will be established as part of the onboarding proce
 
 - [SQLRooms contributing guidelines](https://github.com/sqlrooms/sqlrooms/blob/main/CONTRIBUTING.md)
 
-## Preferred maturity level
-
-Incubating
-
-After incubation, SQLRooms aims to become an At-Large Project.
-
 ## List of project's official communication channels
 
 - [SQLRooms GitHub Discussions](https://github.com/sqlrooms/sqlrooms/discussions)
-- [Slack Channel](https://sqlrooms.org/join-slack)
+- [Slack Channel](https://openjs-foundation.slack.com/archives/C08DY19UUJE) ([how to join](https://sqlrooms.org/join-slack))
 
 ## Link to project's website
 
@@ -131,6 +128,8 @@ The project is currently funded by Ilya Boyandin and the development is partiall
 ## Infrastructure needs or requests
 
 No immediate infrastructure requests. Technical, financial, or promotional support would be appreciated.
+
+sqlrooms.org is hosted on [GitHub pages](https://sqlrooms.github.io). Examples: on Netlify (they provided a free OS [account for the vis.gl team](https://app.netlify.com/teams/visgl/overview)).
 
 ## Domains
 
