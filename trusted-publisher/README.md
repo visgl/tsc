@@ -72,10 +72,15 @@ the remaining bulk operations can proceed. Run the script directly in an
 interactive terminal; redirected or background execution cannot open npm's web
 authentication flow.
 
-The script also contains a commented-out block for setting every selected package
-to require two-factor authentication and disallow token-based publishing. Leave
-this disabled until trusted publishing has been verified for all selected
-packages.
+After trusted publishers have been checked or configured, the script sets every
+selected package to require two-factor authentication and disallow token-based
+publishing. Trusted publishing must therefore already work for every selected
+package.
+
+The script prompts once for the current npm authenticator code and supplies it to
+each publishing-access request. If the code's 30-second validity window expires
+during a large batch, the script asks for a fresh code and retries the affected
+package. The code is not echoed or written to disk.
 
 ## Adding a new package
 

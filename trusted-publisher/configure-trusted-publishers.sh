@@ -82,7 +82,7 @@ configured_count=0
 skipped_count=0
 failed_count=0
 
-while IFS=$'\t' read -r repository package; do
+while IFS=$'\t' read -r repository package <&3; do
   echo "Checking ${package}..."
 
   if ! trust_json="$(npm trust list "${package}" --json)"; then
@@ -124,31 +124,76 @@ while IFS=$'\t' read -r repository package; do
 
   # npm recommends spacing bulk trust requests to avoid rate limiting.
   sleep 2
-done < <(
+done 3< <(
   jq -r \
     --arg filter "${REPOSITORY_FILTER}" \
     '.[] | select($filter == "" or (.repo | contains($filter))) | .repo as $repo | .packages[] | [$repo, .] | @tsv' \
     "${PACKAGES_FILE}"
 )
 
+# After all trusted publishers have been verified, require interactive 2FA and
+# disallow token-based publishing for every package. File descriptor 3 supplies
+# the package list so the script can read OTPs directly from the terminal.
+prompt_for_otp() {
+  if [[ ! -r /dev/tty ]]; then
+    echo "Error: an interactive terminal is required to enter an npm OTP." >&2
+    return 1
+  fi
+
+  printf "Enter the current npm one-time passcode: " >/dev/tty
+  IFS= read -r -s npm_otp </dev/tty
+  printf '\n' >/dev/tty
+
+  if [[ -z "${npm_otp}" ]]; then
+    echo "Error: the npm one-time passcode cannot be empty." >&2
+    return 1
+  fi
+}
+
+set_package_mfa() {
+  local package="$1"
+  local output
+
+  while true; do
+    if output="$(NPM_CONFIG_OTP="${npm_otp}" npm access set mfa=publish "${package}" 2>&1)"; then
+      if [[ -n "${output}" ]]; then
+        printf '%s\n' "${output}"
+      fi
+      return 0
+    fi
+
+    printf '%s\n' "${output}" >&2
+    if [[ "${output}" != *"code EOTP"* ]]; then
+      return 1
+    fi
+
+    echo "The npm one-time passcode expired; enter a fresh code to retry ${package}." >&2
+    prompt_for_otp || return 1
+  done
+}
+
+if ! prompt_for_otp; then
+  exit 1
+fi
+
+while IFS= read -r package <&3; do
+  echo "Requiring 2FA and disallowing tokens for ${package}..."
+  if ! set_package_mfa "${package}"; then
+    echo "Error: could not update publishing access for ${package}." >&2
+    ((failed_count += 1))
+  fi
+done 3< <(
+  jq -r \
+    --arg filter "${REPOSITORY_FILTER}" \
+    '.[] | select($filter == "" or (.repo | contains($filter))) | .packages[]' \
+  "${PACKAGES_FILE}"
+)
+unset npm_otp
+
 echo
 echo "Configured: ${configured_count}"
 echo "Already configured: ${skipped_count}"
 echo "Failed or conflicting: ${failed_count}"
-
-# After all trusted publishers have been verified, uncomment this block to require
-# interactive 2FA and disallow token-based publishing for every package. Trusted
-# publishing through GitHub Actions OIDC will continue to work.
-# while IFS= read -r package; do
-#   echo "Requiring 2FA and disallowing tokens for ${package}..."
-#   npm access set mfa=publish "${package}"
-#   sleep 2
-# done < <(
-#   jq -r \
-#     --arg filter "${REPOSITORY_FILTER}" \
-#     '.[] | select($filter == "" or (.repo | contains($filter))) | .packages[]' \
-#     "${PACKAGES_FILE}"
-# )
 
 if ((failed_count > 0)); then
   exit 1
