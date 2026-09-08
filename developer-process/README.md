@@ -34,6 +34,8 @@ For features that concerns visuals (DOM, CSS and WebGL), additional testing for 
 
 Documentation should be updated to reflect the changes made to user-facing behavior and APIs. This includes the API documentation (e.g. `/docs/api-reference`) for the modified component, tutorials (`/docs/get-started`), advanced articles (`/docs/developer-guide`), and the What's New (`/docs/whats-new.md`) and Upgrade Guide (`/docs/upgrade-guide.md`) pages.
 
+Contributions may be prepared with AI coding assistants and agents. See [AI-Assisted Contributions](./ai-assisted-contributions.md) for the disclosure, verification and review expectations, which follow the OpenJS Foundation policy.
+
 All code changes should open PRs on GitHub and be approved by at least one other team member. If the master branch and the current release branch have diverged, a separate PR may be needed to patch the release branch.
 
 
