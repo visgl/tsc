@@ -35,12 +35,19 @@
   git add CHANGELOG.md
   git status --porcelain
   ```
-  
-7. Run the publish script, the actual publish will then happen via a [Github workflow](https://github.com/visgl/deck.gl/blob/master/.github/workflows/release.yml):
+
+7. Remove local tags that aren't on GitHub. Older versions of the publish script push every local tag, and GitHub doesn't run the release workflow when more than 3 tags are pushed at once.
+  ```bash
+  git fetch origin --prune --prune-tags
+  ```
+
+8. Run the publish script, the actual publish will then happen via a [Github workflow](https://github.com/visgl/deck.gl/blob/master/.github/workflows/release.yml):
   ```bash
   yarn publish-prod
   ```
   Double check the version numbers before confirming to publish.
+
+9. [Verify the release](#verify-the-release).
 
 
 ## Beta release
@@ -62,12 +69,19 @@
   git add CHANGELOG.md
   git status --porcelain
   ```
-  
-6. Run the publish script, the actual publish will then happen via a [Github workflow](https://github.com/visgl/deck.gl/blob/master/.github/workflows/release.yml):
+
+6. Remove local tags that aren't on GitHub:
+  ```bash
+  git fetch origin --prune --prune-tags
+  ```
+
+7. Run the publish script, the actual publish will then happen via a [Github workflow](https://github.com/visgl/deck.gl/blob/master/.github/workflows/release.yml):
   ```bash
   yarn publish-beta
   ```
   Double check the version numbers before confirming to publish.
+
+8. [Verify the release](#verify-the-release).
 
 
 ## Major/Minor release
@@ -92,6 +106,46 @@
 4. Review branch protection rules, e.g. https://github.com/visgl/deck.gl/settings/branches - it may be necessary to a new rule for the newly created branch.
 
 5. Follow the standard [patch release](./publish-checklist.md#patch-release) process to do the release
+
+## Verify the release
+
+The publish script only pushes the version commit and tag. Check that the release workflow published it:
+
+1. A release workflow run started for the tag and succeeded:
+  ```bash
+  gh run list --workflow release.yml --limit 1
+  ```
+2. The packages are on npm. A new version can take a few minutes to show up.
+  ```bash
+  npm view <package> dist-tags
+  ```
+3. The GitHub release exists:
+  ```bash
+  gh release view vX.Y.Z
+  ```
+
+## Recovering a partial release
+
+Never run `yarn publish-prod` or `yarn publish-beta` again to recover, because that bumps to the next version. Work from the existing tag instead.
+
+### The release workflow didn't start
+
+This usually means more than 3 tags were pushed at once. Delete the tag on GitHub and push it again on its own:
+```bash
+git push origin :refs/tags/vX.Y.Z
+git push origin vX.Y.Z
+```
+If the repo's release workflow has a `workflow_dispatch` trigger, `gh workflow run release.yml --ref vX.Y.Z` also works.
+
+Delete any stray tags that were pushed along with it: `git push origin :refs/tags/<tag>`.
+
+### Some packages failed to publish
+
+Use **Re-run failed jobs** on the workflow run. `ocular-publish from-git` only publishes versions that aren't on npm yet.
+
+- With `@vis.gl/dev-tools` versions before [visgl/dev-tools#71](https://github.com/visgl/dev-tools/pull/71), the re-run fails at once because the GitHub release already exists. Copy the release notes, delete the release but keep the tag (`gh release delete vX.Y.Z --yes`), then re-run. The release is created again from CHANGELOG.md.
+- `TLOG_CREATE_ENTRY_ERROR ... (409) an equivalent entry already exists in the transparency log` is an intermittent npm provenance error ([npm/cli#10078](https://github.com/npm/cli/issues/10078)). The package isn't published, and a new attempt succeeds.
+- If a re-run fails only with `You cannot publish over the previously published versions`, those packages were published but weren't visible on the registry yet. Check with `npm view <package>@X.Y.Z version`.
 
 ## Building the website
 
