@@ -135,7 +135,7 @@ This usually means more than 3 tags were pushed at once. Delete the tag on GitHu
 git push origin :refs/tags/vX.Y.Z
 git push origin vX.Y.Z
 ```
-If the repo's release workflow has a `workflow_dispatch` trigger, `gh workflow run release.yml --ref vX.Y.Z` also works.
+If `release.yml` at that tag has a `workflow_dispatch` trigger, `gh workflow run release.yml --ref vX.Y.Z` also works.
 
 Delete any stray tags that were pushed along with it: `git push origin :refs/tags/<tag>`.
 
